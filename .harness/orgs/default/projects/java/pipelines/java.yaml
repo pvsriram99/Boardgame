@@ -36,35 +36,17 @@ pipeline:
                   spec:
                     shell: Sh
                     command: mvn clean install
-    - stage:
-        name: test
-        identifier: test
-        description: ""
-        type: CI
-        spec:
-          cloneCodebase: true
-          caching:
-            enabled: true
-            override: true
-          platform:
-            os: Linux
-            arch: Arm64
-          runtime:
-            type: Cloud
-            spec: {}
-          execution:
-            steps:
               - step:
                   type: Run
-                  name: Run_test-cases
-                  identifier: Run_testcases
+                  name: Run_2
+                  identifier: Run_2
                   spec:
                     shell: Sh
                     command: mvn test
               - step:
                   type: Run
-                  name: Run_2
-                  identifier: Run_2
+                  name: Run_3
+                  identifier: Run_3
                   spec:
                     shell: Sh
                     command: mvn clean install
